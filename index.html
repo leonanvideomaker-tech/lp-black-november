@@ -126,7 +126,12 @@ img{max-width:100%;height:auto}
 .bb .t i{font-style:normal;font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--or)}
 .bb .t span{font-size:14px;font-weight:700;white-space:nowrap}
 .bb .t s{font-weight:400;color:rgba(245,243,241,.45);font-size:12.5px;margin-right:4px}
-.bb a{flex:none;height:42px;display:grid;place-items:center;padding:0 16px;border-radius:12px;background:var(--or);color:#fff;font-weight:700;font-size:14px;text-decoration:none}
+.bb .rel{display:flex;align-items:center;gap:6px;color:var(--or2);flex:none;margin-left:auto}
+.bb .rel span{display:flex;flex-direction:column;line-height:1.15}
+.bb .rel small{font-size:9.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,243,241,.5)}
+.bb .rel b{font-size:13.5px;font-weight:700;color:#f5f3f1;font-variant-numeric:tabular-nums;white-space:nowrap}
+@media (max-width:360px){.bb .rel svg{display:none}.bb{gap:8px;padding-left:12px}}
+.bb a{flex:none;height:42px;display:grid;place-items:center;padding:0 14px;border-radius:12px;background:var(--or);color:#fff;font-weight:700;font-size:14px;text-decoration:none}
 
 
 .bb{position:fixed;left:max(10px,calc(50% - 230px));right:max(10px,calc(50% - 230px));bottom:calc(10px + env(safe-area-inset-bottom,0px))}
@@ -299,7 +304,7 @@ img{max-width:100%;height:auto}
           <div class="foot">Caption Flow Pro · produto de @leopatrizzi</div>
         </div>
 <div class="lbx" id="lbx" hidden><img id="lbxi" alt=""></div>
-<div class="bb" id="bb"><div class="t"><i>BLACK NOVEMBER</i><span><s>R$ 347</s>R$ 297</span></div><a href="#of" id="bbgo">Ver oferta</a></div>
+<div class="bb" id="bb"><div class="t"><i>BLACK NOVEMBER</i><span><s>R$ 347</s>R$ 297</span></div><div class="rel" id="rel" aria-live="off"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg><span><small>acaba em</small><b id="relT">--</b></span></div><a href="#of" id="bbgo">Ver oferta</a></div>
 <script>
 (function(){
   var v=document.getElementById('v'); if(!v) return;
@@ -380,6 +385,19 @@ img{max-width:100%;height:auto}
     T(roda,t0+1000+3*900+3200);
   }
   if('IntersectionObserver' in window){new IntersectionObserver(function(e){if(e[0].isIntersecting&&!rodando){rodando=true;roda()}else if(!e[0].isIntersecting&&rodando){rodando=false;limpa()}},{threshold:.35}).observe(box)}else roda();
+})();
+</script>
+<script>
+// relógio da barra de baixo: até 30/11/2026 23:59:59 em Brasília (UTC-3); some quando acaba
+(function(){
+  var fim=Date.UTC(2026,11,1,2,59,59), el=document.getElementById('relT'), box=document.getElementById('rel');
+  function d2(n){return (n<10?'0':'')+n}
+  function tic(){var r=Math.floor((fim-Date.now())/1000);
+    if(r<=0){box.style.display='none';return}
+    var d=Math.floor(r/86400),h=Math.floor(r%86400/3600),m=Math.floor(r%3600/60),s=r%60;
+    el.textContent=(d>0?d+'d ':'')+d2(h)+':'+d2(m)+':'+d2(s);
+    setTimeout(tic,1000-Date.now()%1000+5)}
+  tic();
 })();
 </script>
 </body></html>
