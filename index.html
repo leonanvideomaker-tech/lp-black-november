@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0e0e0e">
+<title>Caption Flow Pro · Black November</title>
+<meta name="description" content="A forma profissional de lidar com legenda no Premiere e no DaVinci. Black November: de R$ 347 por R$ 297 até 30/11.">
+<link rel="icon" href="img/icone.png"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preload" as="image" href="hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+@font-face{font-family:'TASAOrbiter';src:url(fonts/TASAOrbiter-Regular.otf) format('opentype');font-weight:400;font-display:swap}
+@font-face{font-family:'TASAOrbiter';src:url(fonts/TASAOrbiter-Medium.otf) format('opentype');font-weight:500;font-display:swap}
+@font-face{font-family:'TASAOrbiter';src:url(fonts/TASAOrbiter-Bold.otf) format('opentype');font-weight:700;font-display:swap}
+:root{color-scheme:dark;--or:#FF6D29;--or2:#ff8b52;--paper:#f6f5f3;--ink:#121212;--ink2:#5d5b58;
+  --f:'TASAOrbiter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--m:'IBM Plex Mono',ui-monospace,Menlo,monospace}
+*{box-sizing:border-box}
+html{background:#0e0e0e;-webkit-text-size-adjust:100%}
+body{margin:0;background:#0e0e0e;color:#f5f3f1;font-family:var(--f);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,p,ul,ol{margin:0}ul,ol{padding:0}
+img{max-width:100%}
+.lp{max-width:480px;margin:0 auto;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+/* página dentro do celular */
+.lp{--pad:18px;color:#f5f3f1;font-size:15px}
+.hero{position:relative;padding:0 0 26px;overflow:hidden}
+.ribbons{position:relative;height:96px;margin-bottom:8px}
+.rib{position:absolute;left:-30%;width:160%;height:30px;display:flex;align-items:center;overflow:hidden;font-family:var(--f);font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.rib .run{display:flex;gap:0;animation:run 22s linear infinite}
+.rib .run span{padding-right:28px}
+.rib.a{top:26px;transform:rotate(-6deg);background:var(--or);color:#0e0e0e;z-index:2;box-shadow:0 6px 20px rgba(255,109,41,.25)}
+.rib.b{top:34px;transform:rotate(5deg);background:#0e0e0e;color:#f5f3f1;border-block:1px solid rgba(255,255,255,.22)}
+.rib.b .run{animation-direction:reverse;animation-duration:26s}
+.rib s{text-decoration-thickness:2px;opacity:.75}
+@keyframes run{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.hin{padding:0 var(--pad);display:flex;flex-direction:column;gap:16px}
+.brand{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;letter-spacing:-.01em}
+.brand img{width:24px;height:24px;border-radius:6px}
+.brand i{font-style:normal;font-size:10px;letter-spacing:.08em;color:var(--or);border:1px solid rgba(255,109,41,.5);border-radius:5px;padding:1px 5px}
+.brand span b{color:var(--or);font-weight:700}
+.hero h2{font-size:31px;line-height:1.02;letter-spacing:-.035em;font-weight:700;text-wrap:balance}
+.hero h2 em{font-style:normal;color:rgba(245,243,241,.5)}
+.hero h2 .or{color:var(--or);font-weight:inherit}
+.vid{position:relative;border-radius:18px;overflow:hidden;background:#000;aspect-ratio:4/5;max-width:100%;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+.vid video{width:100%;height:100%;object-fit:cover;display:block}
+.vid .snd{position:absolute;right:10px;bottom:10px;font-family:var(--f);font-size:11.5px;font-weight:500;color:#fff;background:rgba(0,0,0,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 10px;cursor:pointer}
+.chips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}
+.chip{appearance:none;border:0;background:rgba(255,255,255,.06);color:rgba(245,243,241,.6);font-family:var(--f);font-size:11px;font-weight:500;line-height:1.2;border-radius:10px;padding:8px 4px 9px;position:relative;overflow:hidden;cursor:pointer;text-align:center;min-height:44px}
+.chip b{display:block;font-family:var(--m);font-weight:400;font-size:9.5px;color:rgba(245,243,241,.38);margin-bottom:2px}
+.chip .bar{position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--or)}
+.chip.on{color:#fff;background:rgba(255,109,41,.14)}
+.chip.on b{color:var(--or2)}
+.chip:focus-visible,.cta:focus-visible,.bb a:focus-visible{outline:2px solid var(--or2);outline-offset:2px}
+.cta{display:flex;align-items:center;justify-content:center;gap:8px;height:54px;border-radius:15px;background:linear-gradient(180deg,#ff7c3d,#f2601d);color:#fff;font-weight:700;font-size:16px;text-decoration:none;box-shadow:0 10px 30px rgba(255,109,41,.28)}
+.cta small{font-weight:500;opacity:.85;font-size:13px}
+.sub{font-size:12.5px;color:rgba(245,243,241,.5);text-align:center;margin-top:-6px}
+.sub s{opacity:.8}
+.proof{display:flex;align-items:center;justify-content:center;gap:10px;font-size:12.5px;color:rgba(245,243,241,.6)}
+.av{display:flex}
+.av img{width:24px;height:24px;border-radius:50%;border:2px solid #0e0e0e;margin-left:-7px;object-fit:cover}
+.av img:first-child{margin-left:0}
+.offer .av img{border-color:var(--paper)}
+.oproof{display:flex;align-items:center;justify-content:center;gap:10px;font-size:12.5px;color:var(--ink2)}
+
+.sec{padding:34px var(--pad);display:flex;flex-direction:column;gap:16px;border-top:1px solid rgba(255,255,255,.06)}
+.sec h3{font-size:24px;letter-spacing:-.03em;line-height:1.08;font-weight:700;text-wrap:balance}
+.sec h3 em{font-style:normal;color:rgba(245,243,241,.5)}
+.nums{display:flex;flex-direction:column;gap:18px}
+.num{display:grid;grid-template-columns:76px 1fr;gap:12px;align-items:baseline}
+.num .n{font-size:40px;font-weight:700;letter-spacing:-.05em;line-height:1;color:var(--or)}
+.num p{font-size:14px;color:rgba(245,243,241,.62)}
+.num p b{display:block;color:#f5f3f1;font-weight:500;font-size:15px}
+.where{display:flex;flex-direction:column;border-radius:14px;overflow:hidden;background:rgba(255,255,255,.05)}
+.where div{display:flex;justify-content:space-between;gap:12px;padding:13px 14px;font-size:14px;border-bottom:1px solid rgba(255,255,255,.06)}
+.where div:last-child{border-bottom:0}
+.where span:last-child{color:rgba(245,243,241,.55);text-align:right}
+.where .app{display:flex;align-items:center;gap:10px}
+.where .app img{width:24px;height:24px;border-radius:6px}
+.where div{align-items:center}
+.dep{overflow:hidden;margin-inline:calc(var(--pad)*-1);padding-inline:var(--pad);touch-action:pan-y;cursor:grab;-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.dep.agarrado{cursor:grabbing}
+.dep::-webkit-scrollbar{display:none}
+.dep-track{display:flex;gap:8px;width:max-content;will-change:transform;padding-right:8px}
+.dep-col{display:flex;flex-direction:column;gap:8px;width:220px;flex:none}
+.dep-col img{width:220px;border-radius:14px;display:block;box-shadow:0 0 0 1px rgba(255,255,255,.08);-webkit-user-drag:none;user-select:none;pointer-events:none}
+.lbx{position:absolute;inset:0;z-index:9;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:grid;place-items:center;padding:24px;cursor:zoom-out}
+.lbx[hidden]{display:none}
+.lbx img{max-width:100%;max-height:88%;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+
+.offer{margin:0 var(--pad);background:var(--paper);color:var(--ink);border-radius:24px;padding:22px 18px 18px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden}
+.otag{align-self:flex-start;background:#0e0e0e;color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:6px;padding:5px 8px}
+.otag i{font-style:normal;color:var(--or)}
+.price{display:flex;flex-direction:column;gap:2px}
+.price .de{font-size:14px;color:var(--ink2)}
+.price .de s{text-decoration-color:var(--or);text-decoration-thickness:2px}
+.price .por{font-size:52px;font-weight:700;letter-spacing:-.05em;line-height:1}
+.price .por small{font-size:22px;letter-spacing:-.02em;vertical-align:.95em;margin-right:2px}
+.price .parc{font-size:14px;color:var(--ink2)}
+.price .parc mark{background:#ffe7d9;color:var(--ink);border-radius:4px;padding:0 3px}
+.inc{display:flex;flex-direction:column;gap:8px;border-top:1px solid rgba(0,0,0,.08);padding-top:14px}
+.inc li{list-style:none;display:grid;grid-template-columns:18px 1fr;gap:8px;font-size:14px;line-height:1.35}
+.inc li::before{content:"";width:16px;height:16px;margin-top:1px;border-radius:50%;background:var(--or) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.seals{display:flex;flex-wrap:wrap;gap:6px}
+.seals span{font-size:11.5px;font-weight:500;background:rgba(0,0,0,.05);border-radius:999px;padding:5px 9px;color:#2b2a28}
+.ends{font-size:12.5px;color:var(--ink2);text-align:center}
+.ends b{color:var(--ink)}
+.gar{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center;padding:14px;border-radius:14px;background:rgba(0,0,0,.04);font-size:13px;color:var(--ink2)}
+.gar b{display:block;color:var(--ink);font-size:14px}
+.gar span{width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font-weight:700;font-size:12px;line-height:1;text-align:center}
+
+.faq{display:flex;flex-direction:column}
+.faq details{border-bottom:1px solid rgba(255,255,255,.08)}
+.faq summary{list-style:none;cursor:pointer;padding:14px 0;font-size:15px;font-weight:500;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--or);font-size:20px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{padding:0 0 14px;font-size:14px;color:rgba(245,243,241,.62)}
+.foot{padding:28px var(--pad) 110px;text-align:center;font-size:12px;color:rgba(245,243,241,.35)}
+
+/* barra de baixo */
+.bb{position:absolute;left:10px;right:10px;bottom:10px;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 10px 10px 14px;border-radius:18px;
+  background:rgba(22,22,22,.78);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.1);
+  transform:translateY(130%);transition:transform .45s cubic-bezier(.2,.9,.25,1)}
+.bb.show{transform:none}
+.bb .t{display:flex;flex-direction:column;line-height:1.2;min-width:0}
+.bb .t i{font-style:normal;font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--or)}
+.bb .t span{font-size:14px;font-weight:700;white-space:nowrap}
+.bb .t s{font-weight:400;color:rgba(245,243,241,.45);font-size:12.5px;margin-right:4px}
+.bb a{flex:none;height:42px;display:grid;place-items:center;padding:0 16px;border-radius:12px;background:var(--or);color:#fff;font-weight:700;font-size:14px;text-decoration:none}
+
+
+.bb{position:fixed;left:max(10px,calc(50% - 230px));right:max(10px,calc(50% - 230px));bottom:calc(10px + env(safe-area-inset-bottom,0px))}
+.lbx{position:fixed}
+.foot{padding-bottom:calc(110px + env(safe-area-inset-bottom,0px))}
+@media (min-width:700px){body{background:radial-gradient(60% 40% at 50% 0,rgba(255,109,41,.08),transparent 70%),#0e0e0e}}
+@media (prefers-reduced-motion:reduce){.rib .run{animation:none}.bb{transition:none}}
+</style>
+</head><body>
+<div class="lp">
+
+          <div class="hero">
+            <div class="ribbons" aria-label="Black November: de R$ 347 por R$ 297 até 30 de novembro">
+              <div class="rib b" aria-hidden="true"><div class="run" id="rb"></div></div>
+              <div class="rib a" aria-hidden="true"><div class="run" id="ra"></div></div>
+            </div>
+            <div class="hin">
+              <div class="brand"><img src="img/icone.png" alt=""><span>Caption<b>Flow</b></span><i>PRO</i></div>
+              <h2>A forma <b class="or">profissional</b> de lidar com legenda <em>no Premiere e no DaVinci.</em></h2>
+              <div class="vid">
+                <video id="v" src="hero.mp4" poster="hero.jpg" muted playsinline autoplay loop preload="metadata"></video>
+              </div>
+              <div class="chips" id="chips">
+                <button class="chip" type="button" data-i="0"><b>01</b>Transcreve<span class="bar"></span></button>
+                <button class="chip" type="button" data-i="1"><b>02</b>Corta<span class="bar"></span></button>
+                <button class="chip" type="button" data-i="2"><b>03</b>Blocos<span class="bar"></span></button>
+                <button class="chip" type="button" data-i="3"><b>04</b>Anima<span class="bar"></span></button>
+                <button class="chip" type="button" data-i="4"><b>05</b>Gera<span class="bar"></span></button>
+                <button class="chip" type="button" data-i="5"><b>06</b>Template<span class="bar"></span></button>
+                <button class="chip" type="button" data-i="6"><b>07</b>Lab<span class="bar"></span></button>
+                <button class="chip" type="button" data-i="7"><b>08</b>Som<span class="bar"></span></button>
+              </div>
+              <a class="cta" href="#of" id="cta">Quero com desconto <small>R$ 297</small></a>
+              <p class="sub"><s>R$ 347</s> R$ 297 à vista · Black November até 30/11</p>
+              <div class="proof"><div class="av"><img src="img/av-pedro.jpg" alt=""><img src="img/av-bryan.jpg" alt=""><img src="img/av-gleisson.jpg" alt=""><img src="img/av-diego.jpg" alt=""><img src="img/av-jammal.jpg" alt=""></div>+1.200 editores já usam</div>
+            </div>
+          </div>
+
+          <div class="sec">
+            <h3>Paga uma vez. <em>Usa para sempre.</em></h3>
+            <div class="nums">
+              <div class="num"><span class="n">R$0</span><p><b>de mensalidade</b>Pagamento único, atualizações incluídas pelo app.</p></div>
+              <div class="num"><span class="n">∞</span><p><b>minutos de transcrição</b>Roda no seu computador. O vídeo não sobe para nenhum servidor.</p></div>
+              <div class="num"><span class="n">2</span><p><b>programas numa compra</b>Premiere e DaVinci, no Mac e no Windows.</p></div>
+            </div>
+            <div class="where">
+              <div><span class="app"><img src="img/pr.png" alt="">Premiere Pro</span><span>2025 e 2026</span></div>
+              <div><span class="app"><img src="img/dr.png" alt="">DaVinci Resolve 21</span><span>Free e Studio</span></div>
+              <div><span>Sistema</span><span>Mac e Windows</span></div>
+            </div>
+          </div>
+
+          <div class="sec">
+            <h3>Quem usa, conta.</h3>
+            <div class="dep" id="dep"><div class="dep-track" id="depT"><div class="dep-col"><img src="img/fb-01.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n01.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n06.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-02.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n03.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n15.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-03.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n14.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-06.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n02.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n13.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-07.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n11.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n05.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n08.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-08.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n04.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n12.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n07.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-09.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n10.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n11b.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-10.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-01.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n01.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n06.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-02.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n03.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n15.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-03.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n14.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-06.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n02.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n13.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-07.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n11.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n05.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n08.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-08.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n04.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n12.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n07.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-09.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n10.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n11b.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-10.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div></div></div><p class="sub" style="margin-top:0">Segure para pausar · toque para ler · mensagens reais de clientes</p>
+          </div>
+
+          <div class="sec" style="padding-inline:0" id="of">
+            <div class="offer">
+              <span class="otag">Black <i>November</i></span>
+              <div class="price">
+                <span class="de">de <s>R$ 347</s> por</span>
+                <span class="por"><small>R$</small>297</span>
+                <span class="parc">à vista, ou <mark>12x R$ 30,72</mark></span>
+              </div>
+              <ul class="inc">
+                <li>Caption Flow Pro para Premiere Pro 2025 e 2026</li>
+                <li>Caption Flow Pro para DaVinci Resolve 21, Free e Studio</li>
+                <li>Aplicativo para Mac e Windows</li>
+                <li>Vídeo aulas passo a passo</li>
+                <li>Atualizações, suporte humano e comunidade de editores</li>
+              </ul>
+              <a class="cta" href="https://pay.kiwify.com.br/ZBIgHVx" target="_blank" rel="noopener">Quero o Caption Flow</a>
+              <div class="oproof"><div class="av"><img src="img/av-pedro.jpg" alt=""><img src="img/av-bryan.jpg" alt=""><img src="img/av-gleisson.jpg" alt=""><img src="img/av-diego.jpg" alt=""><img src="img/av-jammal.jpg" alt=""></div>+1.200 editores já usam</div>
+              <div class="seals"><span>Funciona no DaVinci Free</span><span>Sem After Effects</span><span>Acesso imediato</span></div>
+              <div class="gar"><span>7<br>dias</span><p><b>Garantia incondicional</b>Instalou e não gostou? Devolvemos 100%.</p></div>
+              <p class="ends">O preço da Black vale até <b>segunda, 30/11, às 23h59</b>.</p>
+            </div>
+          </div>
+
+          <div class="sec">
+            <h3>Perguntas</h3>
+            <div class="faq">
+              <details><summary>Funciona no DaVinci Resolve Free?</summary><p>Sim. Funciona no DaVinci Resolve 21, Free e Studio.</p></details>
+              <details><summary>É vitalício mesmo?</summary><p>Sim. Pagamento único, sem mensalidade, com as atualizações futuras.</p></details>
+              <details><summary>Funciona em qualquer versão do Premiere?</summary><p>No Premiere Pro 2025 e 2026. Versões anteriores não são suportadas.</p></details>
+              <details><summary>Precisa do After Effects?</summary><p>Não. Roda dentro do Premiere e do DaVinci.</p></details>
+              <details><summary>A instalação é difícil?</summary><p>Não. Baixa o app, entra com o e-mail da compra e ele instala a extensão.</p></details>
+              <details><summary>Preciso de internet para transcrever?</summary><p>Não. A transcrição roda no seu computador, sem limite de minutos.</p></details>
+            </div>
+          </div>
+
+          <div class="foot">Caption Flow Pro · produto de @leopatrizzi</div>
+        </div>
+<div class="lbx" id="lbx" hidden><img id="lbxi" alt=""></div>
+<div class="bb" id="bb"><div class="t"><i>BLACK NOVEMBER</i><span><s>R$ 347</s>R$ 297</span></div><a href="#of" id="bbgo">Ver oferta</a></div>
+<script>
+(function(){
+  var txt='Black November · <s>R$ 347</s> R$ 297 · até 30/11 · ';
+  var one=''; for(var i=0;i<6;i++) one+='<span>'+txt+'</span>';
+  document.getElementById('ra').innerHTML=one+one;
+  document.getElementById('rb').innerHTML=(one+one).replace(/Black November/g,'Pagamento único').replace(/<s>R\$ 347<\/s> R\$ 297/g,'Premiere e DaVinci');
+
+  var v=document.getElementById('v');
+  var chips=[].slice.call(document.querySelectorAll('.chip'));
+  // capítulos do vídeo (segundos): o último vai até o cartão da Black
+  var CAP=[0,4.55,8.15,11.9,17.25,22.05,27.4,32.95,38.6];
+  v.addEventListener('timeupdate',function(){
+    var t=v.currentTime, k=-1, NC=CAP.length-1; for(var i=0;i<NC;i++) if(t>=CAP[i]) k=i;
+    chips.forEach(function(c,i){c.classList.toggle('on',i===k&&t<CAP[NC]);c.querySelector('.bar').style.width=(i<k||t>=CAP[NC]?100:i===k?((t-CAP[i])/(CAP[i+1]-CAP[i])*100):0)+'%'});
+  });
+  chips.forEach(function(c){c.addEventListener('click',function(){v.currentTime=CAP[+c.dataset.i]+0.05;v.play&&v.play().catch(function(){})})});
+  
+
+
+  // depoimentos: andam sozinhos em loop; segurar pausa e arrasta; soltar volta a andar; tocar abre grande
+  (function(){
+    var dep=document.getElementById('dep'), tr=document.getElementById('depT'), lbx=document.getElementById('lbx'), lbi=document.getElementById('lbxi');
+    var x=0, vel=26, ag=false, x0=0, p0=0, movido=0, ult=0, reduz=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function meio(){return tr.scrollWidth/2}
+    function pos(){var m=meio(); if(m>0){while(-x>=m)x+=m; while(x>0)x-=m;} tr.style.transform='translate3d('+x+'px,0,0)'}
+    function loop(t){var dt=ult?Math.min(.05,(t-ult)/1000):0; ult=t; if(!ag&&!reduz&&lbx.hidden)x-=vel*dt; pos(); requestAnimationFrame(loop)}
+    requestAnimationFrame(loop);
+    dep.addEventListener('pointerdown',function(e){ag=true;movido=0;x0=x;p0=e.clientX;dep.classList.add('agarrado');try{dep.setPointerCapture(e.pointerId)}catch(_){}});
+    dep.addEventListener('pointermove',function(e){if(!ag)return;var d=e.clientX-p0;movido=Math.max(movido,Math.abs(d));x=x0+d;pos()});
+    function solta(e){if(!ag)return;ag=false;dep.classList.remove('agarrado');
+      if(movido<6&&e&&e.type==='pointerup'){var el=document.elementsFromPoint(e.clientX,e.clientY).filter(function(n){return n.tagName==='IMG'&&n.closest('.dep-col')})[0];
+        if(!el){tr.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(e.clientX>=r.left&&e.clientX<=r.right&&e.clientY>=r.top&&e.clientY<=r.bottom)el=i})}
+        if(el){lbi.src=el.src;lbx.hidden=false}}}
+    dep.addEventListener('pointerup',solta); dep.addEventListener('pointercancel',solta);
+    lbx.addEventListener('click',function(){lbx.hidden=true});
+  })();
+
+  function go(e){e.preventDefault();var o=document.getElementById('of');window.scrollTo({top:o.getBoundingClientRect().top+window.scrollY-12,behavior:'smooth'})}
+  [].slice.call(document.querySelectorAll('a[href="#of"]')).forEach(function(a){a.addEventListener('click',go)});
+
+  var bb=document.getElementById('bb'), cta=document.getElementById('cta'), of=document.getElementById('of');
+  var ctaGone=false, ofIn=false;
+  function upd(){bb.classList.toggle('show',ctaGone&&!ofIn)}
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(e){ctaGone=!e[0].isIntersecting&&e[0].boundingClientRect.top<40;upd()}).observe(cta);
+    new IntersectionObserver(function(e){ofIn=e[0].isIntersecting;upd()},{threshold:.15}).observe(of);
+  }
+})();
+</script>
+</body></html>
