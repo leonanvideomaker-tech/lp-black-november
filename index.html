@@ -7,15 +7,14 @@
 <title>Caption Flow Pro · Black November</title>
 <meta name="description" content="A forma profissional de lidar com legenda no Premiere e no DaVinci. Black November: de R$ 347 por R$ 297 até 30/11.">
 <link rel="icon" href="img/icone.png"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="preload" as="image" href="hero.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="preload" as="image" href="poster.webp" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff2" href="fonts/TASAOrbiter-Bold.woff2" crossorigin>
 <style>
-@font-face{font-family:'TASAOrbiter';src:url(fonts/TASAOrbiter-Regular.otf) format('opentype');font-weight:400;font-display:swap}
-@font-face{font-family:'TASAOrbiter';src:url(fonts/TASAOrbiter-Medium.otf) format('opentype');font-weight:500;font-display:swap}
-@font-face{font-family:'TASAOrbiter';src:url(fonts/TASAOrbiter-Bold.otf) format('opentype');font-weight:700;font-display:swap}
+@font-face{font-family:'TASAOrbiter';src:url(fonts/TASAOrbiter-Regular.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'TASAOrbiter';src:url(fonts/TASAOrbiter-Medium.woff2) format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'TASAOrbiter';src:url(fonts/TASAOrbiter-Bold.woff2) format('woff2');font-weight:700;font-display:swap}
 :root{color-scheme:dark;--or:#FF6D29;--or2:#ff8b52;--paper:#f6f5f3;--ink:#121212;--ink2:#5d5b58;
-  --f:'TASAOrbiter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--m:'IBM Plex Mono',ui-monospace,Menlo,monospace}
+  --f:'TASAOrbiter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--m:ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,monospace}
 *{box-sizing:border-box}
 html{background:#0e0e0e;-webkit-text-size-adjust:100%}
 body{margin:0;background:#0e0e0e;color:#f5f3f1;font-family:var(--f);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -120,7 +119,7 @@ img{max-width:100%}
 
 /* barra de baixo */
 .bb{position:absolute;left:10px;right:10px;bottom:10px;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 10px 10px 14px;border-radius:18px;
-  background:rgba(22,22,22,.78);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.1);
+  background:rgba(24,24,24,.96);box-shadow:0 10px 30px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.1);
   transform:translateY(130%);transition:transform .45s cubic-bezier(.2,.9,.25,1)}
 .bb.show{transform:none}
 .bb .t{display:flex;flex-direction:column;line-height:1.2;min-width:0}
@@ -133,6 +132,79 @@ img{max-width:100%}
 .bb{position:fixed;left:max(10px,calc(50% - 230px));right:max(10px,calc(50% - 230px));bottom:calc(10px + env(safe-area-inset-bottom,0px))}
 .lbx{position:fixed}
 .foot{padding-bottom:calc(110px + env(safe-area-inset-bottom,0px))}
+
+/* ── Seção: funciona com a sua IA ── */
+.ia .kick{align-self:flex-start;font-family:var(--m);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--or2);background:rgba(255,109,41,.1);border:1px solid rgba(255,109,41,.3);border-radius:999px;padding:5px 10px}
+.ia .lead{font-size:15px;color:rgba(245,243,241,.66)}
+.ia .lead b{color:#f5f3f1;font-weight:500}
+.chat{border-radius:20px;background:linear-gradient(180deg,#171717,#121212);border:1px solid rgba(255,255,255,.08);padding:14px;display:flex;flex-direction:column;gap:10px;min-height:356px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.chat-h{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.chat-h .nm{display:flex;align-items:center;gap:8px;font-weight:700;font-size:14px}
+.chat-h .sp{width:26px;height:26px;border-radius:8px;background:#222;border:1px solid #333;display:grid;place-items:center}
+.ias{display:flex;gap:4px}
+.ias span{font-size:10.5px;font-weight:500;color:rgba(245,243,241,.55);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:3px 7px;transition:all .3s}
+.ias span.on{color:#fff;border-color:var(--or);background:rgba(255,109,41,.14)}
+.con{display:flex;align-items:center;gap:9px;padding:9px 10px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);font-size:12.5px}
+.con img{width:22px;height:22px;border-radius:6px}
+.con b{font-weight:500}
+.con small{display:block;color:#30d158;font-size:11px}
+.con i{margin-left:auto;width:8px;height:8px;border-radius:50%;background:#30d158;box-shadow:0 0 0 4px rgba(48,209,88,.15)}
+.msg{align-self:flex-end;max-width:86%;background:#2a2a2e;border-radius:16px 16px 4px 16px;padding:9px 12px;font-size:13.5px;line-height:1.4;min-height:38px}
+.msg .car{display:inline-block;width:1.5px;height:14px;background:#fff;vertical-align:-2px;margin-left:1px;animation:pisca 1s steps(1) infinite}
+@keyframes pisca{50%{opacity:0}}
+.resp{display:flex;flex-direction:column;gap:6px}
+.resp p{font-size:12.5px;color:rgba(245,243,241,.6)}
+.st{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.06);font-size:13px;opacity:0;transform:translateY(6px);transition:opacity .35s,transform .45s cubic-bezier(.2,.9,.25,1.2)}
+.st.vis{opacity:1;transform:none}
+.st .ic{width:18px;height:18px;border-radius:50%;flex:none;border:2px solid #444;border-top-color:var(--or);animation:gira .8s linear infinite}
+.st.ok .ic{animation:none;border:0;background:#30d158 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%23111' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+.st code{margin-left:auto;font-family:var(--m);font-size:10.5px;color:rgba(245,243,241,.38)}
+@keyframes gira{to{transform:rotate(360deg)}}
+.fim{font-size:13px;color:#f5f3f1;opacity:0;transition:opacity .4s}
+.fim.vis{opacity:1}
+.fim b{color:#30d158;font-weight:500}
+.ia-pts{display:flex;flex-direction:column;gap:12px}
+.ia-pts li{list-style:none;display:grid;grid-template-columns:30px 1fr;gap:10px;font-size:14px;color:rgba(245,243,241,.62);line-height:1.45}
+.ia-pts li b{display:block;color:#f5f3f1;font-weight:500;font-size:15px}
+.ia-pts .n{width:30px;height:30px;border-radius:9px;background:rgba(255,109,41,.12);border:1px solid rgba(255,109,41,.3);display:grid;place-items:center;color:var(--or);font-weight:700;font-size:14px}
+.ia .nota{font-size:12px}
+/* dobra laranja da IA: ocupa a largura toda da tela */
+.ia{position:relative;overflow:hidden;background:var(--or);color:#111;border-top:0;box-shadow:0 0 0 100vmax var(--or);clip-path:inset(0 -100vmax);padding-top:48px;padding-bottom:52px}
+.ia > *{position:relative;z-index:1}
+.ia h3{color:#111;font-size:30px}
+.ia h3 em{color:#fff}
+.ia .lead{color:rgba(17,17,17,.78);font-size:15.5px}
+.ia .lead b{color:#111;font-weight:700}
+.ia .chat{color:#f5f3f1;box-shadow:0 30px 60px rgba(80,20,0,.35),0 0 0 1px rgba(0,0,0,.25)}
+.ia-pts li{color:rgba(17,17,17,.75)}
+.ia-pts li b{color:#111;font-weight:700}
+.ia-pts .n{background:#111;border:0;color:var(--or)}
+.ia .nota{color:rgba(17,17,17,.6)}
+.ia-fundo{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.ia-fundo span{position:absolute;right:-18px;top:6px;font-weight:700;font-size:210px;line-height:.8;letter-spacing:-.06em;color:rgba(255,255,255,.16)}
+.ia + .sec{border-top:0}
+
+@media (prefers-reduced-motion:reduce){.st,.fim{transition:none}.st .ic,.msg .car{animation:none}}
+
+
+@supports (animation-timeline: view()) {
+ @media (prefers-reduced-motion: no-preference) {
+  .vid{animation:p-sai linear both;animation-timeline:view();animation-range:exit 0% exit 100%}
+  @keyframes p-sai{to{transform:translateY(-60px) scale(.94);opacity:.4}}
+  .ribbons{animation:p-rib linear both;animation-timeline:view();animation-range:exit 0% exit 100%}
+  @keyframes p-rib{to{transform:translateY(40px)}}
+  .sec > h3,.nums .num,.where,.dep,.offer,.faq details{animation:p-sobe linear both;animation-timeline:view();animation-range:entry 0% entry 70%}
+  @keyframes p-sobe{from{transform:translateY(46px);opacity:0}to{transform:none;opacity:1}}
+  .ia .lead,.ia-pts li{animation:p-sobe linear both;animation-timeline:view();animation-range:entry 0% entry 80%}
+  .ia .chat{animation:p-chat linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+  @keyframes p-chat{from{transform:translateY(70px) rotate(-1.5deg)}to{transform:translateY(-50px) rotate(1deg)}}
+  .ia-fundo span{animation:p-fundo linear both;animation-timeline:view(block);animation-range:cover 0% cover 100%}
+  @keyframes p-fundo{from{transform:translateY(-40px)}to{transform:translateY(360px)}}
+  .ia h3{animation:p-tit linear both;animation-timeline:view();animation-range:entry 0% cover 40%}
+  @keyframes p-tit{from{transform:translateY(60px) scale(.96);opacity:0}to{transform:none;opacity:1}}
+ }
+}
+
 @media (min-width:700px){body{background:radial-gradient(60% 40% at 50% 0,rgba(255,109,41,.08),transparent 70%),#0e0e0e}}
 @media (prefers-reduced-motion:reduce){.rib .run{animation:none}.bb{transition:none}}
 </style>
@@ -145,10 +217,10 @@ img{max-width:100%}
               <div class="rib a" aria-hidden="true"><div class="run" id="ra"></div></div>
             </div>
             <div class="hin">
-              <div class="brand"><img src="img/icone.png" alt=""><span>Caption<b>Flow</b></span><i>PRO</i></div>
+              <div class="brand"><img src="img/icone.webp" width="96" height="96" alt=""><span>Caption<b>Flow</b></span><i>PRO</i></div>
               <h2>A forma <b class="or">profissional</b> de lidar com legenda <em>no Premiere e no DaVinci.</em></h2>
               <div class="vid">
-                <video id="v" src="hero.mp4" poster="hero.jpg" muted playsinline autoplay loop preload="metadata"></video>
+                <video id="v" poster="poster.webp" data-src="hero.mp4" muted playsinline loop preload="none" width="720" height="900"></video>
               </div>
               <div class="chips" id="chips">
                 <button class="chip" type="button" data-i="0"><b>01</b>Transcreve<span class="bar"></span></button>
@@ -162,7 +234,7 @@ img{max-width:100%}
               </div>
               <a class="cta" href="#of" id="cta">Quero com desconto <small>R$ 297</small></a>
               <p class="sub"><s>R$ 347</s> R$ 297 à vista · Black November até 30/11</p>
-              <div class="proof"><div class="av"><img src="img/av-pedro.jpg" alt=""><img src="img/av-bryan.jpg" alt=""><img src="img/av-gleisson.jpg" alt=""><img src="img/av-diego.jpg" alt=""><img src="img/av-jammal.jpg" alt=""></div>+1.200 editores já usam</div>
+              <div class="proof"><div class="av"><img src="img/av-pedro.webp" width="96" height="96" loading="lazy" decoding="async" alt=""><img src="img/av-bryan.webp" width="96" height="96" loading="lazy" decoding="async" alt=""><img src="img/av-gleisson.webp" width="96" height="96" loading="lazy" decoding="async" alt=""><img src="img/av-diego.webp" width="96" height="96" loading="lazy" decoding="async" alt=""><img src="img/av-jammal.webp" width="96" height="96" loading="lazy" decoding="async" alt=""></div>+1.200 editores já usam</div>
             </div>
           </div>
 
@@ -174,15 +246,39 @@ img{max-width:100%}
               <div class="num"><span class="n">2</span><p><b>programas numa compra</b>Premiere e DaVinci, no Mac e no Windows.</p></div>
             </div>
             <div class="where">
-              <div><span class="app"><img src="img/pr.png" alt="">Premiere Pro</span><span>2025 e 2026</span></div>
-              <div><span class="app"><img src="img/dr.png" alt="">DaVinci Resolve 21</span><span>Free e Studio</span></div>
+              <div><span class="app"><img src="img/pr.webp" width="96" height="96" loading="lazy" decoding="async" alt="">Premiere Pro</span><span>2025 e 2026</span></div>
+              <div><span class="app"><img src="img/dr.webp" width="96" height="96" loading="lazy" decoding="async" alt="">DaVinci Resolve 21</span><span>Free e Studio</span></div>
               <div><span>Sistema</span><span>Mac e Windows</span></div>
             </div>
           </div>
 
+          <div class="sec ia" id="ia"><div class="ia-fundo" aria-hidden="true"><span>IA</span></div>
+            <h3>Peça para a sua IA. <em>O Caption Flow faz.</em></h3>
+            <p class="lead">A sua IA já sabe editar, mas edita genérico: o mesmo estilo de todo mundo. <b>Conectada ao Caption Flow, ela edita do jeito profissional</b>, com os seus templates, os seus ajustes e o workflow que você já usa no Premiere e no DaVinci.</p>
+            <div class="chat" id="iaChat" aria-label="Exemplo: a IA usando o Caption Flow">
+              <div class="chat-h"><span class="nm"><span class="sp"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff8b52" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/></svg></span>Sua IA</span><span class="ias"><span>Claude</span><span>Codex</span><span>Cursor</span></span></div>
+              <div class="con"><img src="img/icone.webp" width="96" height="96" alt=""><span><b>Caption Flow Pro</b><small>conectado</small></span><i></i></div>
+              <div class="msg" id="iaMsg"><span id="iaTxt"></span><span class="car"></span></div>
+              <div class="resp">
+                <p id="iaP" style="opacity:0">Certo! Usando o Caption Flow:</p>
+                <div class="st" id="s1"><span class="ic"></span>Transcrevendo o vídeo<code>transcrever</code></div>
+                <div class="st" id="s2"><span class="ic"></span>Cortando 14 silêncios<code>cortar</code></div>
+                <div class="st" id="s3"><span class="ic"></span>Gerando 82 legendas<code>gerar</code></div>
+                <div class="st" id="s4"><span class="ic"></span>Aplicando o seu template<code>template</code></div>
+                <div class="fim" id="iaFim"><b>Pronto.</b> Está tudo na sua timeline, pode revisar.</div>
+              </div>
+            </div>
+            <ul class="ia-pts">
+              <li><span class="n">1</span><span><b>Usa a IA que você já assina</b>Sem chave de API e sem crédito extra. Você conecta o seu Claude, Codex ou Cursor.</span></li>
+              <li><span class="n">2</span><span><b>Com o seu estilo, não o da IA</b>Ela usa a transcrição, os cortes, os templates e os presets do Caption Flow, os mesmos que você já usa. Nada de legenda genérica.</span></li>
+              <li><span class="n">3</span><span><b>Você continua no controle</b>Tudo cai na sua timeline, pronto para revisar. Os cortes saem numa cópia, o original fica intacto.</span></li>
+            </ul>
+            <p class="nota">Conecta pela aba IA do aplicativo, em dois passos.</p>
+          </div>
+
           <div class="sec">
             <h3>Quem usa, conta.</h3>
-            <div class="dep" id="dep"><div class="dep-track" id="depT"><div class="dep-col"><img src="img/fb-01.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n01.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n06.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-02.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n03.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n15.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-03.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n14.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-06.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n02.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n13.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-07.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n11.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n05.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n08.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-08.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n04.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n12.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n07.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-09.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n10.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n11b.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-10.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-01.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n01.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n06.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-02.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n03.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n15.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-03.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n14.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-06.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n02.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n13.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-07.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n11.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n05.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n08.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-08.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n04.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n12.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n07.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-09.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n10.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n11b.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-10.jpg" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div></div></div><p class="sub" style="margin-top:0">Segure para pausar · toque para ler · mensagens reais de clientes</p>
+            <div class="dep" id="dep"><div class="dep-track" id="depT"><div class="dep-col"><img src="img/fb-01.webp" width="439" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n01.webp" width="640" height="368" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n06.webp" width="640" height="547" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-02.webp" width="448" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n03.webp" width="640" height="433" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n15.webp" width="640" height="549" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-03.webp" width="442" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n14.webp" width="640" height="921" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-06.webp" width="442" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n02.webp" width="640" height="370" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n13.webp" width="640" height="533" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-07.webp" width="445" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n11.webp" width="640" height="325" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n05.webp" width="640" height="291" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n08.webp" width="640" height="155" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-08.webp" width="447" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n04.webp" width="640" height="239" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n12.webp" width="640" height="212" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n07.webp" width="640" height="222" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-09.webp" width="442" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n10.webp" width="640" height="205" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n11b.webp" width="640" height="146" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-10.webp" width="441" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-01.webp" width="439" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n01.webp" width="640" height="368" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n06.webp" width="640" height="547" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-02.webp" width="448" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n03.webp" width="640" height="433" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n15.webp" width="640" height="549" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-03.webp" width="442" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n14.webp" width="640" height="921" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-06.webp" width="442" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n02.webp" width="640" height="370" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n13.webp" width="640" height="533" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-07.webp" width="445" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n11.webp" width="640" height="325" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n05.webp" width="640" height="291" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n08.webp" width="640" height="155" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-08.webp" width="447" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n04.webp" width="640" height="239" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n12.webp" width="640" height="212" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n07.webp" width="640" height="222" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-09.webp" width="442" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n10.webp" width="640" height="205" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n11b.webp" width="640" height="146" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-10.webp" width="441" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div></div></div><p class="sub" style="margin-top:0">Segure para pausar · toque para ler · mensagens reais de clientes</p>
           </div>
 
           <div class="sec" style="padding-inline:0" id="of">
@@ -201,7 +297,7 @@ img{max-width:100%}
                 <li>Atualizações, suporte humano e comunidade de editores</li>
               </ul>
               <a class="cta" href="https://pay.kiwify.com.br/ZBIgHVx" target="_blank" rel="noopener">Quero o Caption Flow</a>
-              <div class="oproof"><div class="av"><img src="img/av-pedro.jpg" alt=""><img src="img/av-bryan.jpg" alt=""><img src="img/av-gleisson.jpg" alt=""><img src="img/av-diego.jpg" alt=""><img src="img/av-jammal.jpg" alt=""></div>+1.200 editores já usam</div>
+              <div class="oproof"><div class="av"><img src="img/av-pedro.webp" width="96" height="96" loading="lazy" decoding="async" alt=""><img src="img/av-bryan.webp" width="96" height="96" loading="lazy" decoding="async" alt=""><img src="img/av-gleisson.webp" width="96" height="96" loading="lazy" decoding="async" alt=""><img src="img/av-diego.webp" width="96" height="96" loading="lazy" decoding="async" alt=""><img src="img/av-jammal.webp" width="96" height="96" loading="lazy" decoding="async" alt=""></div>+1.200 editores já usam</div>
               <div class="seals"><span>Funciona no DaVinci Free</span><span>Sem After Effects</span><span>Acesso imediato</span></div>
               <div class="gar"><span>7<br>dias</span><p><b>Garantia incondicional</b>Instalou e não gostou? Devolvemos 100%.</p></div>
               <p class="ends">O preço da Black vale até <b>segunda, 30/11, às 23h59</b>.</p>
@@ -224,6 +320,16 @@ img{max-width:100%}
         </div>
 <div class="lbx" id="lbx" hidden><img id="lbxi" alt=""></div>
 <div class="bb" id="bb"><div class="t"><i>BLACK NOVEMBER</i><span><s>R$ 347</s>R$ 297</span></div><a href="#of" id="bbgo">Ver oferta</a></div>
+<script>
+(function(){
+  var v=document.getElementById('v'); if(!v) return;
+  var visivel=true;
+  function liga(){ if(v.src) return; v.src=v.getAttribute('data-src'); v.load(); if(visivel){var p=v.play(); if(p&&p.catch)p.catch(function(){});} }
+  if(document.readyState==='complete') setTimeout(liga,150); else addEventListener('load',function(){setTimeout(liga,150)});
+  setTimeout(liga,2500);   // se o load demorar (rede lenta), liga mesmo assim
+  if('IntersectionObserver' in window) new IntersectionObserver(function(e){visivel=e[0].isIntersecting; if(!v.src) return; if(visivel){var p=v.play(); if(p&&p.catch)p.catch(function(){});} else v.pause();},{threshold:.15}).observe(v);
+})();
+</script>
 <script>
 (function(){
   var txt='Black November · <s>R$ 347</s> R$ 297 · até 30/11 · ';
@@ -249,9 +355,11 @@ img{max-width:100%}
     var x=0, vel=26, ag=false, x0=0, p0=0, movido=0, ult=0, reduz=matchMedia('(prefers-reduced-motion: reduce)').matches;
     function meio(){return tr.scrollWidth/2}
     function pos(){var m=meio(); if(m>0){while(-x>=m)x+=m; while(x>0)x-=m;} tr.style.transform='translate3d('+x+'px,0,0)'}
-    function loop(t){var dt=ult?Math.min(.05,(t-ult)/1000):0; ult=t; if(!ag&&!reduz&&lbx.hidden)x-=vel*dt; pos(); requestAnimationFrame(loop)}
-    requestAnimationFrame(loop);
-    dep.addEventListener('pointerdown',function(e){ag=true;movido=0;x0=x;p0=e.clientX;dep.classList.add('agarrado');try{dep.setPointerCapture(e.pointerId)}catch(_){}});
+    var naTela=false, rodando=false;
+    function loop(t){var dt=ult?Math.min(.05,(t-ult)/1000):0; ult=t; if(!ag&&!reduz&&lbx.hidden)x-=vel*dt; pos(); if(naTela||ag) requestAnimationFrame(loop); else {rodando=false; ult=0;}}
+    function acorda(){ if(!rodando){rodando=true; requestAnimationFrame(loop);} }
+    if('IntersectionObserver' in window) new IntersectionObserver(function(e){naTela=e[0].isIntersecting; if(naTela) acorda();}).observe(dep); else {naTela=true; acorda();}
+    dep.addEventListener('pointerdown',function(e){ag=true;acorda();movido=0;x0=x;p0=e.clientX;dep.classList.add('agarrado');try{dep.setPointerCapture(e.pointerId)}catch(_){}});
     dep.addEventListener('pointermove',function(e){if(!ag)return;var d=e.clientX-p0;movido=Math.max(movido,Math.abs(d));x=x0+d;pos()});
     function solta(e){if(!ag)return;ag=false;dep.classList.remove('agarrado');
       if(movido<6&&e&&e.type==='pointerup'){var el=document.elementsFromPoint(e.clientX,e.clientY).filter(function(n){return n.tagName==='IMG'&&n.closest('.dep-col')})[0];
@@ -271,6 +379,27 @@ img{max-width:100%}
     new IntersectionObserver(function(e){ctaGone=!e[0].isIntersecting&&e[0].boundingClientRect.top<40;upd()}).observe(cta);
     new IntersectionObserver(function(e){ofIn=e[0].isIntersecting;upd()},{threshold:.15}).observe(of);
   }
+})();
+</script>
+<script>
+// seção da IA: roda o exemplo quando aparece na tela, e repete
+(function(){
+  var box=document.getElementById('iaChat'); if(!box) return;
+  var MSG='Edita esse vídeo do meu jeito: transcreve, corta os silêncios e aplica o meu template Gringa.';
+  var tx=document.getElementById('iaTxt'), p=document.getElementById('iaP'), fim=document.getElementById('iaFim');
+  var st=[1,2,3,4].map(function(i){return document.getElementById('s'+i)}), ias=[].slice.call(box.querySelectorAll('.ias span'));
+  var reduz=matchMedia('(prefers-reduced-motion: reduce)').matches, rodando=false, timers=[], vez=0;
+  function T(f,ms){timers.push(setTimeout(f,ms))}
+  function limpa(){timers.forEach(clearTimeout);timers=[];tx.textContent='';p.style.opacity=0;fim.classList.remove('vis');st.forEach(function(e){e.classList.remove('vis','ok')})}
+  function roda(){limpa(); ias.forEach(function(e,i){e.classList.toggle('on',i===vez%ias.length)}); vez++;
+    if(reduz){tx.textContent=MSG;p.style.opacity=1;st.forEach(function(e){e.classList.add('vis','ok')});fim.classList.add('vis');return}
+    var n=0; (function digita(){tx.textContent=MSG.slice(0,++n); if(n<MSG.length) T(digita,22)})();
+    var t0=MSG.length*22+350; T(function(){p.style.opacity=1},t0);
+    st.forEach(function(e,i){T(function(){e.classList.add('vis')},t0+250+i*900); T(function(){e.classList.add('ok')},t0+1000+i*900)});
+    T(function(){fim.classList.add('vis')},t0+1000+3*900+300);
+    T(roda,t0+1000+3*900+3200);
+  }
+  if('IntersectionObserver' in window){new IntersectionObserver(function(e){if(e[0].isIntersecting&&!rodando){rodando=true;roda()}else if(!e[0].isIntersecting&&rodando){rodando=false;limpa()}},{threshold:.35}).observe(box)}else roda();
 })();
 </script>
 </body></html>
