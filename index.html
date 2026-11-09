@@ -61,6 +61,8 @@ img{max-width:100%;height:auto}
 .av img{width:24px;height:24px;border-radius:50%;border:2px solid #0e0e0e;margin-left:-7px;object-fit:cover}
 .av img:first-child{margin-left:0}
 .offer .av img{border-color:var(--paper)}
+.oc{display:contents}
+.offer .otag{order:1}.offer .price{order:2}.offer .inc{order:3}.offer > .oc > .cta{order:4}.oproof{order:5}.seals{order:6}.gar{order:7}.ends{order:8}
 .oproof{display:flex;align-items:center;justify-content:center;gap:10px;font-size:12.5px;color:var(--ink2)}
 
 .sec{padding:34px var(--pad);display:flex;flex-direction:column;gap:16px;border-top:1px solid rgba(255,255,255,.06)}
@@ -91,10 +93,17 @@ img{max-width:100%;height:auto}
 .offer{margin:0 var(--pad);background:var(--paper);color:var(--ink);border-radius:24px;padding:22px 18px 18px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden}
 .otag{align-self:flex-start;background:#0e0e0e;color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:6px;padding:5px 8px}
 .otag i{font-style:normal;color:var(--or)}
-.price{display:flex;flex-direction:column;gap:2px}
+.price{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:stretch}
+.price .pa{display:flex;flex-direction:column;justify-content:center;gap:2px}
+.price .pb{display:flex;flex-direction:column;justify-content:center;gap:1px;background:#ffe7d9;border-radius:16px;padding:12px 14px;text-align:right}
+.price .eco{font-size:12px;color:#8a3a12;font-weight:500}
+.price .ecov{font-size:26px;font-weight:700;letter-spacing:-.04em;line-height:1.05;color:#c2410c}
+.price .pb .parc{font-size:12.5px;color:var(--ink2);margin-top:4px}
+.price .pb .parc b{color:var(--ink);font-weight:700}
+.price .vista{font-size:13px;color:var(--ink2)}
 .price .de{font-size:14px;color:var(--ink2)}
 .price .de s{text-decoration-color:var(--or);text-decoration-thickness:2px}
-.price .por{font-size:52px;font-weight:700;letter-spacing:-.05em;line-height:1}
+.price .por{font-size:56px;font-weight:700;letter-spacing:-.05em;line-height:1}
 .price .por small{font-size:22px;letter-spacing:-.02em;vertical-align:.95em;margin-right:2px}
 .price .parc{font-size:14px;color:var(--ink2)}
 .price .parc mark{background:#ffe7d9;color:var(--ink);border-radius:4px;padding:0 3px}
@@ -188,6 +197,55 @@ img{max-width:100%;height:auto}
 .ia .nota{color:rgba(17,17,17,.6)}
 .ia + .sec{border-top:0}
 
+
+/* ═══ Computador (≥ 960 px): o celular não é afetado por nada daqui ═══ */
+@media (min-width:960px){
+  .lp{max-width:1160px;padding-inline:40px;font-size:16px;--pad:0px}
+  .hero{overflow:visible;padding-bottom:64px}
+  .ribbons{height:128px;margin:0 calc(50% - 50vw) 12px;overflow:hidden}
+  .rib{height:44px;font-size:16px}
+  .rib.a{top:36px}.rib.b{top:46px}
+  .hin{--vw:clamp(330px,calc((100vh - 270px)*.8),460px);display:grid;grid-template-columns:minmax(0,1fr) var(--vw);column-gap:72px;row-gap:22px;
+    grid-template-areas:"sp vid" "brand vid" "title vid" "cta vid" "sub vid" "proof vid" "sp2 vid" ". chips";grid-template-rows:1fr auto auto auto auto auto 1fr auto}
+  .hin::before{content:"";grid-area:sp}.hin::after{content:"";grid-area:sp2}
+  .brand{grid-area:brand}.hero h2{grid-area:title;font-size:62px;line-height:1}
+  .vid{grid-area:vid;border-radius:24px;width:var(--vw)}
+  .chips{grid-area:chips;gap:6px}
+  .hin > .cta{grid-area:cta;justify-self:start;padding:0 34px;height:58px;font-size:17px}
+  .hin > .sub{grid-area:sub;text-align:left;margin-top:-8px}
+  .proof{grid-area:proof;justify-content:flex-start}
+  .sec{padding:80px 0;gap:28px}
+  .sec h3{font-size:44px}
+  .s-nums .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  .s-nums .num{grid-template-columns:1fr;gap:10px}
+  .s-nums .num .n{font-size:64px}
+  .s-nums .num p{font-size:15px}
+  .s-nums .where{flex-direction:row}
+  .s-nums .where div{flex:1;border-bottom:0;border-right:1px solid rgba(255,255,255,.06);padding:18px 22px}
+  .s-nums .where div:last-child{border-right:0}
+  .ia{display:grid;grid-template-columns:minmax(0,1fr) 460px;column-gap:72px;row-gap:22px;padding-top:96px;padding-bottom:96px;
+    grid-template-areas:"title chat" "lead chat" "pts chat" "nota chat";align-content:center}
+  .ia h3{grid-area:title;font-size:52px}.ia .lead{grid-area:lead;font-size:17px;max-width:52ch}
+  .ia .chat{grid-area:chat;align-self:center}.ia .ia-pts{grid-area:pts}.ia .nota{grid-area:nota}
+  .ia-pts li{font-size:15px}
+  .s-dep .dep{margin-inline:calc(50% - 50vw);padding-inline:40px}
+  .s-dep .dep-col,.s-dep .dep-col img{width:260px}
+  .s-dep > .sub{text-align:center}
+  #of{padding-block:80px}
+  .offer{display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"a b" "c b";column-gap:48px;row-gap:22px;padding:44px 48px;border-radius:32px;max-width:1000px;margin:0 auto}
+  .oc{display:flex;flex-direction:column;gap:16px}
+  .oc-a{grid-area:a}.oc-b{grid-area:b;justify-content:center}.oc-c{grid-area:c}
+  .oc-b .inc{border-top:0;padding-top:0;gap:12px}
+  .oc-b .inc li{font-size:16px}
+  .price .por{font-size:76px}.price .por small{font-size:28px}
+  .price .ecov{font-size:32px}
+  .oc-c .cta{height:60px;font-size:18px}
+  .oproof{justify-content:flex-start}.ends{text-align:left}
+  .s-faq{max-width:1000px;margin:0 auto}
+  .s-faq .faq{display:grid;grid-template-columns:1fr 1fr;column-gap:48px}
+  .foot{padding-top:40px}
+}
+
 @media (prefers-reduced-motion:reduce){.st,.fim{transition:none}.st .ic,.msg .car{animation:none}}
 
 
@@ -224,7 +282,7 @@ img{max-width:100%;height:auto}
             </div>
           </div>
 
-          <div class="sec">
+          <div class="sec s-nums">
             <h3>Paga uma vez. <em>Usa para sempre.</em></h3>
             <div class="nums">
               <div class="num"><span class="n">R$0</span><p><b>de mensalidade</b>Pagamento único, atualizações incluídas pelo app.</p></div>
@@ -262,19 +320,29 @@ img{max-width:100%;height:auto}
             <p class="nota">Conecta pela aba IA do aplicativo, em dois passos.</p>
           </div>
 
-          <div class="sec">
+          <div class="sec s-dep">
             <h3>Quem usa, conta.</h3>
             <div class="dep" id="dep"><div class="dep-track" id="depT"><div class="dep-col"><img src="img/fb-01.webp" width="439" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n01.webp" width="640" height="368" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n06.webp" width="640" height="547" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-02.webp" width="448" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n03.webp" width="640" height="433" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n15.webp" width="640" height="549" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-03.webp" width="442" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n14.webp" width="640" height="921" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-06.webp" width="442" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n02.webp" width="640" height="370" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n13.webp" width="640" height="533" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-07.webp" width="445" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n11.webp" width="640" height="325" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n05.webp" width="640" height="291" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n08.webp" width="640" height="155" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-08.webp" width="447" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n04.webp" width="640" height="239" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n12.webp" width="640" height="212" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n07.webp" width="640" height="222" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-09.webp" width="442" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n10.webp" width="640" height="205" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n11b.webp" width="640" height="146" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-10.webp" width="441" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-01.webp" width="439" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n01.webp" width="640" height="368" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n06.webp" width="640" height="547" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-02.webp" width="448" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n03.webp" width="640" height="433" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n15.webp" width="640" height="549" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-03.webp" width="442" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n14.webp" width="640" height="921" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-06.webp" width="442" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n02.webp" width="640" height="370" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n13.webp" width="640" height="533" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-07.webp" width="445" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n11.webp" width="640" height="325" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n05.webp" width="640" height="291" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n08.webp" width="640" height="155" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-08.webp" width="447" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n04.webp" width="640" height="239" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n12.webp" width="640" height="212" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n07.webp" width="640" height="222" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-09.webp" width="442" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/dep/n10.webp" width="640" height="205" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"><img src="img/dep/n11b.webp" width="640" height="146" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div><div class="dep-col"><img src="img/fb-10.webp" width="441" height="640" loading="lazy" decoding="async" alt="Mensagem real de cliente sobre o Caption Flow" draggable="false"></div></div></div><p class="sub" style="margin-top:0">Segure para pausar · toque para ler · mensagens reais de clientes</p>
           </div>
 
           <div class="sec" style="padding-inline:0" id="of">
             <div class="offer">
+              <div class="oc oc-a">
               <span class="otag">Black <i>November</i></span>
               <div class="price">
-                <span class="de">de <s>R$ 347</s> por</span>
-                <span class="por"><small>R$</small>297</span>
-                <span class="parc">à vista, ou <mark>12x R$ 30,72</mark></span>
+                <div class="pa">
+                  <span class="de">de <s>R$ 347</s> por</span>
+                  <span class="por"><small>R$</small>297</span>
+                  <span class="vista">à vista</span>
+                </div>
+                <div class="pb">
+                  <span class="eco">Você economiza</span>
+                  <b class="ecov">R$ 50</b>
+                  <span class="parc">ou <b>12x R$ 30,72</b></span>
+                </div>
               </div>
+              </div>
+              <div class="oc oc-b">
               <ul class="inc">
                 <li>Caption Flow Pro para Premiere Pro 2025 e 2026</li>
                 <li>Caption Flow Pro para DaVinci Resolve 21, Free e Studio</li>
@@ -282,15 +350,18 @@ img{max-width:100%;height:auto}
                 <li>Vídeo aulas passo a passo</li>
                 <li>Atualizações, suporte humano e comunidade de editores</li>
               </ul>
-              <a class="cta" href="https://pay.kiwify.com.br/ZBIgHVx" target="_blank" rel="noopener">Quero o Caption Flow</a>
-              <div class="oproof"><div class="av"><img src="img/av-pedro.webp" width="96" height="96" loading="lazy" decoding="async" alt=""><img src="img/av-bryan.webp" width="96" height="96" loading="lazy" decoding="async" alt=""><img src="img/av-gleisson.webp" width="96" height="96" loading="lazy" decoding="async" alt=""><img src="img/av-diego.webp" width="96" height="96" loading="lazy" decoding="async" alt=""><img src="img/av-jammal.webp" width="96" height="96" loading="lazy" decoding="async" alt=""></div>+1.200 editores já usam</div>
               <div class="seals"><span>Funciona no DaVinci Free</span><span>Sem After Effects</span><span>Acesso imediato</span></div>
               <div class="gar"><span>7<br>dias</span><p><b>Garantia incondicional</b>Instalou e não gostou? Devolvemos 100%.</p></div>
+              </div>
+              <div class="oc oc-c">
+              <a class="cta" href="https://pay.kiwify.com.br/ZBIgHVx" target="_blank" rel="noopener">Quero o Caption Flow</a>
+              <div class="oproof"><div class="av"><img src="img/av-pedro.webp" width="96" height="96" loading="lazy" decoding="async" alt=""><img src="img/av-bryan.webp" width="96" height="96" loading="lazy" decoding="async" alt=""><img src="img/av-gleisson.webp" width="96" height="96" loading="lazy" decoding="async" alt=""><img src="img/av-diego.webp" width="96" height="96" loading="lazy" decoding="async" alt=""><img src="img/av-jammal.webp" width="96" height="96" loading="lazy" decoding="async" alt=""></div>+1.200 editores já usam</div>
               <p class="ends">O preço da Black vale até <b>segunda, 30/11, às 23h59</b>.</p>
+              </div>
             </div>
           </div>
 
-          <div class="sec">
+          <div class="sec s-faq">
             <h3>Perguntas</h3>
             <div class="faq">
               <details><summary>Funciona no DaVinci Resolve Free?</summary><p>Sim. Funciona no DaVinci Resolve 21, Free e Studio.</p></details>
